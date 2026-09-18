@@ -7,83 +7,155 @@
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans leading-normal">
+<body class="bg-gray-50 text-gray-800 font-sans leading-normal flex flex-col min-h-screen">
 
     <!-- Header / Navigation Bar -->
     <header class="bg-indigo-900 text-white sticky top-0 z-50 shadow-md">
-        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
-            <div class="text-center md:text-left mb-4 md:mb-0">
-                <a href="#" class="text-2xl font-bold tracking-wide">Mutare Girls High</a>
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            
+            <!-- Logo & Tagline -->
+            <div class="text-left">
+                <a href="#" class="text-2xl font-bold tracking-wide block">Mutare Girls High</a>
                 <p class="text-xs text-indigo-200 italic">Her future, Our passion</p>
             </div>
-            <nav>
-                <ul class="flex space-x-6 text-sm font-medium">
-                    <li><a href="#home" class="hover:text-indigo-300 transition-colors">Home</a></li>
-                    <li><a href="#about" class="hover:text-indigo-300 transition-colors">About Us</a></li>
-                    <li><a href="#academics" class="hover:text-indigo-300 transition-colors">Academics</a></li>
-                    <li><a href="#contact" class="hover:text-indigo-300 transition-colors">Contact</a></li>
-                </ul>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#home" class="hover:text-indigo-300 transition-colors">Home</a>
+                <a href="#about" class="hover:text-indigo-300 transition-colors">About Us</a>
+                <a href="#showcase" class="hover:text-indigo-300 transition-colors">Showcase</a>
+                <a href="#academics" class="hover:text-indigo-300 transition-colors">Academics</a>
+                <a href="#contact" class="hover:text-indigo-300 transition-colors">Contact</a>
             </nav>
+
+            <!-- Hamburger Button (Mobile Only) -->
+            <button id="menu-btn" class="md:hidden focus:outline-none text-white p-2" aria-label="Toggle Navigation Menu">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-indigo-950 px-4 pt-2 pb-4 space-y-2 text-sm border-t border-indigo-800">
+            <a href="#home" class="mobile-link block py-2 hover:text-indigo-300">Home</a>
+            <a href="#about" class="mobile-link block py-2 hover:text-indigo-300">About Us</a>
+            <a href="#showcase" class="mobile-link block py-2 hover:text-indigo-300">Showcase</a>
+            <a href="#academics" class="mobile-link block py-2 hover:text-indigo-300">Academics</a>
+            <a href="#contact" class="mobile-link block py-2 hover:text-indigo-300">Contact</a>
         </div>
     </header>
 
-    <!-- Banner / Hero Section -->
-    <section id="home" class="relative bg-indigo-800 text-white py-24 px-4 text-center">
-        <div class="max-w-3xl mx-auto space-y-6">
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">Nurturing Minds, Shaping Futures</h1>
-            <p class="text-lg md:text-xl text-indigo-100">Welcome to Mutare Girls High, where her passion is our passion.</p>
-            <div>
-                <a href="#about" class="inline-block bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all">Learn More</a>
+    <!-- Banner / Hero Section with /mutarehigh.webp background -->
+    <section id="home" class="relative bg-indigo-900 text-white py-32 px-4 text-center bg-cover bg-center" style="background-image: url('./mutarehigh.webp');">
+        <!-- Dark Overlay for image legibility -->
+        <div class="absolute inset-0 bg-indigo-950/75"></div>
+
+        <div class="relative max-w-3xl mx-auto space-y-6">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-md">Nurturing Minds, Shaping Futures</h1>
+            <p class="text-lg md:text-2xl text-indigo-100 font-light">Welcome to Mutare Girls High, where her passion is our passion.</p>
+            <div class="pt-4">
+                <a href="#about" class="inline-block bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all">Learn More</a>
             </div>
         </div>
     </section>
 
-    <!-- Main Content Section -->
-    <main class="container mx-auto px-4 py-12 space-y-16 max-w-6xl">
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12 space-y-20 max-w-6xl flex-grow">
         
         <!-- About Section -->
-        <section id="about" class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center md:text-left">
+        <section id="about" class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100 text-center md:text-left">
             <h2 class="text-3xl font-bold text-gray-900 mb-4 border-b-2 border-indigo-500 pb-2 inline-block">About Our School</h2>
             <p class="text-gray-600 leading-relaxed text-lg mt-4">
                 Founded in 1954, Mutare Girls High School offers a robust curriculum designed to foster critical thinking, creativity, and leadership skills in students.
             </p>
         </section>
 
+        <!-- School Showcase Section -->
+        <section id="showcase">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-3xl font-bold text-gray-900 mb-3">Campus Showcase</h2>
+                <p class="text-gray-600">Take a look at our vibrant school environment, state-of-the-art facilities, and student activities.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Showcase Item 1 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+                    <img src="./mutarehigh.webp" alt="Modern Science & Computer Labs" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-indigo-900 mb-2">Modern Science Labs</h3>
+                        <p class="text-gray-600 text-sm">Well-equipped science and computer laboratories empowering students through practical discovery.</p>
+                    </div>
+                </div>
+
+                <!-- Showcase Item 2 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+                    <img src="./mutarehigh.webp" alt="Sports & Extracurricular Activities" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-indigo-900 mb-2">Sports & Athletics</h3>
+                        <p class="text-gray-600 text-sm">Spacious sports fields and competitive athletic teams encouraging wellness and teamwork.</p>
+                    </div>
+                </div>
+
+                <!-- Showcase Item 3 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+                    <img src="./mutarehigh.webp" alt="School Library & Learning Center" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-indigo-900 mb-2">Comprehensive Library</h3>
+                        <p class="text-gray-600 text-sm">A vast collection of academic literature, research resources, and quiet study zones.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Academics Section -->
         <section id="academics">
             <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Our Programs</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <!-- Card 1 -->
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                     <h3 class="text-xl font-semibold text-indigo-900 mb-3">Primary Education</h3>
                     <p class="text-gray-600">Building a strong foundational core in literacy, math, and exploratory sciences.</p>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                     <h3 class="text-xl font-semibold text-indigo-900 mb-3">Secondary Education</h3>
                     <p class="text-gray-600">Advanced study pathways prepping students for competitive global environments.</p>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                     <h3 class="text-xl font-semibold text-indigo-900 mb-3">Extracurriculars</h3>
                     <p class="text-gray-600">From championship sports teams to award-winning music and arts clubs.</p>
                 </div>
-
             </div>
         </section>
 
     </main>
 
     <!-- Footer Section -->
-    <footer id="contact" class="bg-gray-900 text-gray-400 py-8 px-4 text-center mt-12">
+    <footer id="contact" class="bg-gray-900 text-gray-400 py-8 px-4 text-center mt-auto">
         <div class="container mx-auto space-y-2">
             <p>&copy; 2026 Mutare School. All Rights Reserved.</p>
             <p class="text-sm">Email: <a href="mailto:info@mutaregirls.ac.zw" class="text-indigo-400 hover:underline">info.P.O.Box 950 Mutare</a> | Phone: <a href="tel:+2632064531" class="text-indigo-400 hover:underline">+263 20 64531</a></p>
         </div>
     </footer>
+
+    <!-- Toggle Script for Mobile Hamburger Menu -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when clicking any link in mobile view
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 
 </body>
 </html>
