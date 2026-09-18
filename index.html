@@ -139,6 +139,23 @@
         </div>
     </footer>
 
+    <!-- Inspect Deterrent Script -->
+    <script>
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+        document.addEventListener('keydown', (e) => {
+            if (
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+                (e.ctrlKey && e.key === 'u')
+            ) {
+                e.preventDefault();
+            }
+        });
+    </script>
+
     <!-- Toggle Script for Mobile Hamburger Menu -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
